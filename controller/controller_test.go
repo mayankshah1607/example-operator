@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/mayankshah1607/sidecar-operator/utils"
+	"github.com/mayankshah1607/example-operator/utils"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 	appsv1 "k8s.io/api/apps/v1"
@@ -24,7 +24,7 @@ func TestHandleDeploymentReconciler(t *testing.T) {
 	).Return(nil)
 
 	ctx := context.Background()
-	reconciler := &SidecarReconciler{
+	reconciler := &MyReconciler{
 		Client: client,
 		Scheme: newTestScheme(),
 	}
@@ -37,7 +37,7 @@ func TestHandleDeploymentReconciler(t *testing.T) {
 
 func newTestDeployment() *appsv1.Deployment {
 	labels := make(map[string]string)
-	labels[sidecarInjectLabel] = "true"
+	labels[injectLabel] = "true"
 	return &appsv1.Deployment{
 		ObjectMeta: v1.ObjectMeta{
 			Name:   "test-deployment",

@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/mayankshah1607/sidecar-operator/controller"
+	"github.com/mayankshah1607/example-operator/controller"
 	appsv1 "k8s.io/api/apps/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
@@ -34,7 +34,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	addonReconciler := &controller.SidecarReconciler{
+	addonReconciler := &controller.MyReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}

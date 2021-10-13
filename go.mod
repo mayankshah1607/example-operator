@@ -1,4 +1,4 @@
-module github.com/mayankshah1607/sidecar-operator
+module github.com/mayankshah1607/example-operator
 
 go 1.16
 
