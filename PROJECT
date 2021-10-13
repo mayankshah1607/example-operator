@@ -1,0 +1,6 @@
+domain: mayankshah.dev
+layout:
+- go.kubebuilder.io/v3
+projectName: sidecar-operator
+repo: github.com/mayankshah1607/sidecar-operator
+version: "3"
